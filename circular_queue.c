@@ -3,7 +3,7 @@
 #define max 5
 int q[max];
 int rear = -1;
-int front = -1,ch,x,a,i,j;
+int front = -1,ch,a,i,j;
 void main()
 {
     int ch;
@@ -20,6 +20,8 @@ void main()
         switch(ch)
         {
             case 1:
+
+            
             insert();
             break;
             case 2:
@@ -27,6 +29,7 @@ void main()
             break;
             case 3:
             display();
+            break;
             case 4:
             exit(0);
             break;
@@ -38,7 +41,7 @@ void main()
 void insert()
 {
     int x;
-    if((front ==0 && rear == max-1) || (rear +1 == front))
+    if((front==0 && rear == max-1) || (rear+1 == front))
         printf("Queue overflow \n");
     else
     {
@@ -46,13 +49,13 @@ void insert()
         scanf("%d",&x);
         if(rear ==-1)
             front = 0,rear = 0;
-        else if(rear ==max-1)
+        else if(rear==max-1)
             rear = 0;
         else
             rear++;
             q[rear]=x;
     }
-}
+} 
 void delete()
 {
     int a;
@@ -74,7 +77,7 @@ void delete()
 void display()
 {
     int i,j;
-    if(front ==-1&&rear ==-1)
+    if(front ==-1 && rear ==-1)
         printf("Queue underflow\n");
         if(front>rear)
         {
